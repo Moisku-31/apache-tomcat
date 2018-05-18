@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+
+  apache:
+    image: dagman62/apache
+    container_name: apache
+    ports:
+      - "80:80"
+    volumes:
+      - ./httpd-tomcat.conf:/usr/local/apache/conf/httpd.conf 
+  tomcat8:
+    image: dagman62/tomcat8
+    container_name: tomcat8
+    ports:
+      - "8080:8080"
+
