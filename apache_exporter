@@ -4,7 +4,7 @@
 set -e
 
 export GOPATH=/root/go
-PATH=/bin:/usr/bin:/sbin:/usr/sbin:$GOPATH/bin
+export PATH=/bin:/usr/bin:/sbin:/usr/sbin:$GOPATH/bin
 NAME=apache_exporter
 DESC="apache_exporter servlet engine"
 
