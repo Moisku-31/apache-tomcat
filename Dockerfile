@@ -5,7 +5,6 @@ FROM dagman62/apache
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
      golang \
-     sudo \
      git
 
 # install and configure golang for apache_exporter for premetheous
@@ -15,13 +14,10 @@ WORKDIR /root
 RUN git init \ 
   && git config --global http.sslVerify false \
   && mkdir go \
-  && echo 'root    ALL=(ALL:ALL) NOPASSWD:ALL' >> /etc/sudoers \
-  && echo "export GOPATH=$HOME/go" >> .bashrc \
-  && echo "export PATH=$PATH:$GOPATH/bin" >> .bashrc \
   && export GOPATH=/root/go \
   && export PATH=$PATH:$GOPATH/bin \
   && go get github.com/neezgee/apache_exporter \
-  && sudo -s source .bashrc
+  && ln -sf /root/go/bin/apache_exporter /usr/bin/apache_exporter 
 
 WORKDIR /
 
