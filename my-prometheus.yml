@@ -31,7 +31,7 @@ scrape_configs:
 
   - job_name: 'Apache'
 
-    metrics_path: /usr/local/apache/logs
+    metrics_path: /metrics
     
     static_configs:
-      - targets: ['apache:80']
+      - targets: ['apache:9117']

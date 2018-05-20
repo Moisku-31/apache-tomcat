@@ -10,7 +10,8 @@ services:
     volumes:
       - ./my-prometheus.yml:/etc/prometheus/prometheus.yml
   apache:
-    image: dagman62/apache
+    image: apache
+    build: . 
     container_name: apache
     ports:
       - "80:80"
