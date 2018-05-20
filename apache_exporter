@@ -10,7 +10,7 @@ DESC="apache_exporter servlet engine"
 
 
 do_start() {
-  nohup apache_exporter &
+  apache_exporter &
 }
 
 do_stop() {
