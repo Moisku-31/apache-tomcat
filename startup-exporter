@@ -3,4 +3,4 @@
 export GOPATH=/root/go
 export PATH=$PATH:$GOPATH/bin
 
-/usr/sbin/service apache_exporter start
+/etc/init.d/apache_exporter start
