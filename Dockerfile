@@ -37,7 +37,7 @@ RUN chmod +x /etc/init.d/apache_exporter \
 
 EXPOSE 9117
 
-ENTRYPOINT ["apache_exporter"]
+ENTRYPOINT ["startup-exporter"]
 
 CMD ["start-apache"]
 
